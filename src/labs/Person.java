@@ -4,6 +4,9 @@ Java Lab sheet three. Examples for nested classes and enum with Person class
 
 package labs;
 
+import java.util.Comparator;
+import java.util.Objects;
+
 /**
  *
  * @author ajb
@@ -31,9 +34,23 @@ public class Person implements Comparable<Person>{
         for(Person p:peeps)
             System.out.println(p);
 //OTHER SORTING HERE
-
-
     }
+
+    static class compareByName implements Comparator<Person>{
+
+
+        @Override
+        public int compare(Person o1, Person o2) {
+            return o1.name.compareTo(o2.name);
+        }
+
+//        @Override
+        public boolean equals(Person o1, Person o2) {
+            return o1.name.equals(o2.name);
+        }
+    }
+
+
     public static void main(String[] args){
         Person[] people=new Person[5];
         people[0]=new Person("Bob",21,12,190,0,'m');
