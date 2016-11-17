@@ -43,6 +43,42 @@ public class Person implements Comparable<Person>{
         people[4]=new Person("Zhang Wei",24,7,170,3,'m');
         sortPersonArray(people);
     }
+    @Override
+    public String toString(){
+        StringBuilder returnString = new StringBuilder();
+        returnString.append("Person:\n**************************");
+        returnString.append("\n\tName: " + this.name);
+        returnString.append("\n\tAge: " + this.age);
+        returnString.append("\n\tHeight(cm): " + this.height);
+        returnString.append("\n\tShoe Size: " + this.shoeSize);
+        if(this.sex == 'm'){
+            returnString.append("\n\tGender: Male");
+        }else if(this.sex == 'f'){
+            returnString.append("\n\tGender: Female");
+        }else{
+            returnString.append("\n\tGender: Other");
+        }
+        switch (this.nationality){
+            case 1:
+                returnString.append("\n\tNationality: British");
+                break;
+            case 2:
+                returnString.append("\n\tNationality: French");
+                break;
+            case 3:
+                returnString.append("\n\tNationality: German");
+                break;
+            case 4:
+                returnString.append("\n\tNationality: American");
+                break;
+            case 5:
+                returnString.append("\n\tNationality: Other");
+                break;
+        }
+        returnString.append("\n++++++++++++++++++++++++++\n");
+
+        return returnString.toString();
+    }
 
     @Override
     public int compareTo(Person o){
